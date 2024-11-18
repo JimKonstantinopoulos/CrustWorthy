@@ -7,12 +7,12 @@ function AppLayout() {
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   return (
-    <div className="layout">
+    <div className="grid h-screen grid-rows-[auto_1fr_auto] gap-8">
       {isLoading && <Loader />}
 
       <Header />
 
-      <main>
+      <main className="overflow-y-auto">
         <Outlet />
       </main>
 
