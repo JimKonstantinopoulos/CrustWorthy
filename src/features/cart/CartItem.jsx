@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import Button from "../../ui/Button";
 import { formatCurrency } from "../../utilities/helpers";
 import { removePizza } from "./cartSlice";
+import UpdateQuantity from "./UpdateQuantity";
 
 function CartItem({ pizza }) {
   const { pizzaId, name, quantity, totalPrice } = pizza;
@@ -18,6 +19,7 @@ function CartItem({ pizza }) {
       </p>
       <div className="flex items-center justify-between tablet:gap-6">
         <p className="text-sm font-semibold">{formatCurrency(totalPrice)}</p>
+        <UpdateQuantity id={pizzaId} />
         <Button type="small" onClick={handleRemovePizza}>
           Remove
         </Button>
