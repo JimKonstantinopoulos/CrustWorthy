@@ -3,7 +3,6 @@ import { formatCurrency } from "../../utilities/helpers";
 
 function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
-  console.log(id);
 
   return (
     <li className="flex gap-4 py-2">
