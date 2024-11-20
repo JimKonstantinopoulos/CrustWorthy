@@ -10,10 +10,11 @@ export default {
       desktop: "1280px",
       desktop_w: "1536px",
     },
-    fontFamily: {
-      roboto: "Roboto Mono, monospace",
+    extend: {
+      fontFamily: {
+        roboto: "Roboto Mono, monospace",
+      },
     },
-    extend: {},
   },
   plugins: [],
 };
