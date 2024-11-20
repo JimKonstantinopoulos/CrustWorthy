@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+//eslint-disable-next-line
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -8,6 +9,9 @@ export default {
       laptop: "1024px",
       desktop: "1280px",
       desktop_w: "1536px",
+    },
+    fontFamily: {
+      roboto: "Roboto Mono, monospace",
     },
     extend: {},
   },
