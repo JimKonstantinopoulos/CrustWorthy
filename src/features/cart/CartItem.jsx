@@ -1,8 +1,15 @@
+import { useDispatch } from "react-redux";
 import Button from "../../ui/Button";
 import { formatCurrency } from "../../utilities/helpers";
+import { removePizza } from "./cartSlice";
 
-function CartItem({ item }) {
-  const { pizzaId, name, quantity, totalPrice } = item;
+function CartItem({ pizza }) {
+  const { pizzaId, name, quantity, totalPrice } = pizza;
+  const dispatch = useDispatch();
+
+  function handleRemovePizza() {
+    dispatch(removePizza(pizzaId));
+  }
 
   return (
     <li className="py-3 tablet:flex tablet:items-center tablet:justify-between">
@@ -11,7 +18,9 @@ function CartItem({ item }) {
       </p>
       <div className="flex items-center justify-between tablet:gap-6">
         <p className="text-sm font-semibold">{formatCurrency(totalPrice)}</p>
-        <Button type="small">Remove</Button>
+        <Button type="small" onClick={handleRemovePizza}>
+          Remove
+        </Button>
       </div>
     </li>
   );
