@@ -1,4 +1,4 @@
-Simple App the order pizza's
+Simple App the order pizzas through a modern SPA web app, using an API to let you select, update quantity delete and order pizzas. No need to signup for a new user account, just insert your name and you are good to go. 
 
 # React + Vite
 
