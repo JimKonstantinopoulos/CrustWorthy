@@ -19,9 +19,9 @@ function MenuItem({ pizza }) {
     const newPizza = {
       pizzaId: id,
       name: name,
-      quantity: tempQuantity,
+      quantity: tempQuantity + currentQuantity,
       unitPrice,
-      totalPrice: unitPrice,
+      totalPrice: unitPrice * (tempQuantity + currentQuantity),
     };
 
     dispatch(addPizza(newPizza));

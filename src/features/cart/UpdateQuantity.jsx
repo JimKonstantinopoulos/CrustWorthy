@@ -4,7 +4,6 @@ import { decreasePizzaQuantity, increasePizzaQuantity } from "./cartSlice";
 
 function UpdateQuantity({ pizzaId, display, tempQuantity, setTempQuantity }) {
   const dispatch = useDispatch();
-  console.log(tempQuantity);
 
   function handleIncQuantity() {
     setTempQuantity((cur) => cur + 1);
