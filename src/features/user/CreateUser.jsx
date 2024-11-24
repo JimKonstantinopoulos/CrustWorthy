@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../../ui/Button";
-import { fetchLocation, updateName } from "./userSlice";
+import { updateName } from "./userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -37,7 +37,6 @@ function CreateUser() {
           <Button type="primary">Start ordering</Button>
         </div>
       )}
-      <button onClick={() => dispatch(fetchLocation())}>Get location</button>
     </form>
   );
 }

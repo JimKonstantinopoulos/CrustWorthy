@@ -3,11 +3,17 @@ import Button from "../../ui/Button";
 import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, getCart } from "./cartSlice";
+import { useEffect } from "react";
+import { fetchLocation } from "../user/userSlice";
 
 function Cart() {
   const username = useSelector((state) => state.user.username);
   const cart = useSelector(getCart);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchLocation());
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleClearCart() {
     dispatch(clearCart());

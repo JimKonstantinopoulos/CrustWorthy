@@ -16,7 +16,13 @@ function CreateOrder() {
   const [withPriority, setWithPriority] = useState(false);
   const totalCartSum = useSelector(getTotalCartSum);
   const priorityPrice = totalCartSum * 0.2;
-  console.log(formatCurrency(priorityPrice));
+  const {
+    address,
+    status: locationStatus,
+    position,
+  } = useSelector((state) => state.user);
+
+  console.log(address, locationStatus, position);
 
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
