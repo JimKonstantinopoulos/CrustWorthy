@@ -19,7 +19,8 @@ export const fetchLocation = createAsyncThunk(
 
     // 2) Use a reverse geocoding API to get a description of the user's address, so it can be displayed in the order form, so that the user can correct it if wrong
     const addressObj = await getAddress(position);
-    const address = `${addressObj?.locality}, ${addressObj?.city} ${addressObj?.postcode}, ${addressObj?.countryName}`;
+
+    const address = `${addressObj?.country}, ${addressObj?.city}, ${addressObj?.staddress} ${addressObj?.stnumber}`;
 
     return { position, address };
   },

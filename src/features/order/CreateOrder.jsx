@@ -17,17 +17,15 @@ function CreateOrder() {
   const totalCartSum = useSelector(getTotalCartSum);
   const priorityPrice = totalCartSum * 0.2;
   const {
+    username,
     address,
     status: locationStatus,
     position,
   } = useSelector((state) => state.user);
 
-  console.log(address, locationStatus, position);
-
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   const formErrors = useActionData();
-  const username = useSelector((state) => state.user.username);
 
   return (
     <div className="px-4 py-6">
@@ -62,6 +60,7 @@ function CreateOrder() {
               className="input w-full"
               type="text"
               name="address"
+              defaultValue={address}
               required
             />
           </div>
