@@ -32,11 +32,11 @@ Simple App the order pizzas through a modern SPA web app, using an API to let yo
 # How to use
 1. **Clone the repository**
     ```
-    git clone https://github.com/JimKonstantinopoulos/SliceMeUp.git
+    git clone https://github.com/JimKonstantinopoulos/CrustWorthy.git
     ```
 2. **Navigate to the project directory**
     ```
-    cd sliceMeUp
+    cd CrustWorthy
     ```
 3. **Install dependencies**
     ```
