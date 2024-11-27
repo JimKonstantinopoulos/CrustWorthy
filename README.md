@@ -11,7 +11,7 @@ Simple App the order pizzas through a modern SPA web app, using an API to let yo
 
 # Libraries and Frameworks
 <ol>
-  <li>React</li>
+  <li>React.Js</li>
   <li>Next.Js</li>
   <li>React Router v6.4+</li>
   <li>Tailwind CSS</li>
