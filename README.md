@@ -1,6 +1,6 @@
 # SliceMeUp
 
-Simple App the order pizzas through a modern SPA web app, using an API to let you select, update quantity delete and order pizzas. No need to signup for a new user account, just insert your name and you are good to go. 
+Simple App to order pizzas through a modern SPA web app, using an API to let you select, update, delete and order pizzas. No need to signup for a new user account, just insert your name and you are good to go. 
 
 # Languages
 <ol>
