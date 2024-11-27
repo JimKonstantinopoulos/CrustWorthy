@@ -6,16 +6,9 @@ import {
   formatCurrency,
   formatDate,
 } from "../../utilities/helpers";
-import { getOrder } from "../../services/apiRestaurant";
 import OrderItem from "./OrderItem";
 import { useEffect } from "react";
 import UpdateOrder from "./UpdateOrder";
-
-export async function loader({ params }) {
-  const order = await getOrder(params.orderId);
-
-  return order;
-}
 
 function Order() {
   const order = useLoaderData();

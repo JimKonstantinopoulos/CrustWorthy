@@ -1,27 +1,15 @@
 import { useState } from "react";
-import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
-import { createOrder } from "../../services/apiRestaurant";
+import { Form, useActionData, useNavigation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { clearCart, getTotalCartSum } from "../cart/cartSlice";
+import { getTotalCartSum } from "../cart/cartSlice";
 import Button from "../../ui/Button";
-import store from "../../store";
 import { formatCurrency } from "../../utilities/helpers";
-
-const isValidPhone = (str) =>
-  /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
-    str,
-  );
 
 function CreateOrder() {
   const [withPriority, setWithPriority] = useState(false);
   const totalCartSum = useSelector(getTotalCartSum);
   const priorityPrice = totalCartSum * 0.2;
-  const {
-    username,
-    address,
-    status: locationStatus,
-    position,
-  } = useSelector((state) => state.user);
+  const { username, address } = useSelector((state) => state.user);
 
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
@@ -91,28 +79,6 @@ function CreateOrder() {
       </Form>
     </div>
   );
-}
-
-export async function action({ request }) {
-  const cart = store.getState().cart.cart;
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
-  const order = {
-    ...data,
-    cart: cart,
-    priority: data.priority === "true",
-  };
-
-  const errors = {};
-  if (!isValidPhone(order.phone)) {
-    errors.phone = "Please enter a valid phone number";
-    return errors;
-  }
-
-  const newOrder = await createOrder(order);
-  store.dispatch(clearCart());
-
-  return redirect(`/order/${newOrder.id}`);
 }
 
 export default CreateOrder;
