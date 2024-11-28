@@ -19,10 +19,12 @@ function CartItem({ pizza }) {
       </p>
       <div className="flex items-center justify-between tablet:gap-6">
         <p className="text-sm font-semibold">{formatCurrency(totalPrice)}</p>
-        <UpdateQuantity pizzaId={pizzaId} />
-        <Button type="small" onClick={handleRemovePizza}>
-          Remove
-        </Button>
+        <div className="items center flex justify-between gap-6">
+          <UpdateQuantity pizzaId={pizzaId} />
+          <Button type="small" onClick={handleRemovePizza}>
+            Remove
+          </Button>
+        </div>
       </div>
     </li>
   );

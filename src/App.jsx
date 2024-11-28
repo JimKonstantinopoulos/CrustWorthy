@@ -10,6 +10,7 @@ import CreateOrder from "./features/order/CreateOrder";
 import { action as createOrderAction } from "./features/order/createOrderAction";
 import { action as updateOrderAction } from "./features/order/updateOrderAction";
 import AppLayout from "./ui/AppLayout";
+import ProtectedRoute from "./utilities/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -22,23 +23,39 @@ const router = createBrowserRouter([
       },
       {
         path: "/menu",
-        element: <Menu />,
+        element: (
+          <ProtectedRoute>
+            <Menu />
+          </ProtectedRoute>
+        ),
         errorElement: <Error />,
         loader: menuLoader,
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/order/:orderId",
-        element: <Order />,
+        element: (
+          <ProtectedRoute>
+            <Order />
+          </ProtectedRoute>
+        ),
         loader: orderLoader,
         action: updateOrderAction,
       },
       {
         path: "/order/new",
-        element: <CreateOrder />,
+        element: (
+          <ProtectedRoute>
+            <CreateOrder />
+          </ProtectedRoute>
+        ),
         action: createOrderAction,
       },
     ],
