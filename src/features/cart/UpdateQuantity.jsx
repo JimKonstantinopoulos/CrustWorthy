@@ -16,7 +16,7 @@ function UpdateQuantity({ pizzaId, display, tempQuantity, setTempQuantity }) {
   }
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-2 tablet:gap-3">
       <Button type="round" onClick={handleIncQuantity}>
         +
       </Button>

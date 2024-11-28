@@ -41,14 +41,16 @@ function MenuItem({ pizza }) {
         </p>
         <div className="mt-auto flex items-end justify-between">
           {!soldOut ? (
-            <p className="text-sm">{formatCurrency(unitPrice)}</p>
+            <p className="flex h-full items-center text-sm">
+              {formatCurrency(unitPrice)}
+            </p>
           ) : (
             <p className="text-sm font-medium uppercase text-red-700">
               Sold out
             </p>
           )}
           {!soldOut && (
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 tablet:gap-4 tablet_w:gap-6">
               <UpdateQuantity
                 pizzaId={id}
                 display={true}
