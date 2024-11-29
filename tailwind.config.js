@@ -16,6 +16,9 @@ export default {
       fontFamily: {
         roboto: "Roboto Mono, monospace",
       },
+      height: {
+        svh: "100svh",
+      },
     },
   },
   plugins: [],
