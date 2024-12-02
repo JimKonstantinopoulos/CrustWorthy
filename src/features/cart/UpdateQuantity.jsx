@@ -6,7 +6,7 @@ function UpdateQuantity({ pizzaId, display, tempQuantity, setTempQuantity }) {
   const dispatch = useDispatch();
 
   function handleIncQuantity() {
-    setTempQuantity((cur) => cur + 1);
+    if (display) setTempQuantity((cur) => cur + 1);
     !display && dispatch(increasePizzaQuantity(pizzaId));
   }
 
