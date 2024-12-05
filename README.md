@@ -11,7 +11,7 @@ Simple App to order pizzas through a modern SPA web app, using an API to let you
 
 # Libraries and Frameworks
 <ol>
-  <li><img src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React Logo"</img>
+  <li><img src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React Logo" width="20px"></img>
   <li>Next.Js</li>
   <li>React Router v6.4+</li>
   <li>Tailwind CSS</li>
